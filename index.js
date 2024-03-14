@@ -15,9 +15,11 @@ app.get('/', (req, res) => {
 });
 
 app.get('/create', (req, res) => {
+    let reqparam = req.query.id;
     fs.writeFileSync('./logs.txt', `${req.url} \n`)
     createFile('./createFile.json', `${abc} \n`);
-    res.send(abc)
+    res.send(reqparam)
+    console.log(reqparam)
 })
 
 app.get('/year', (req, res) => {
@@ -38,7 +40,11 @@ app.get('/delete', (req, res) => {
     console.log(req.path)
     fs.unlinkSync('./createFile.json');
     res.send('file deleted')
-})  
+})
+
+// app.get('/id', function(req, res){
+//     res.send('id: ' + req.query.id);
+//   });
 
 app.listen(port, () => {
     console.log(`running on http://localhost:${port}`);

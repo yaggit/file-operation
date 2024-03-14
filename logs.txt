@@ -1,1 +1,1 @@
-/create 
+/create/?id=3 
