@@ -18,8 +18,8 @@ app.get('/create', (req, res) => {
     let reqparam = req.query.id;
     fs.writeFileSync('./logs.txt', `${req.url} \n`)
     createFile('./createFile.json', `${abc} \n`);
-    res.send(reqparam)
-    console.log(reqparam)
+    res.send(abc)
+    console.log(abc)
 })
 
 app.get('/year', (req, res) => {
